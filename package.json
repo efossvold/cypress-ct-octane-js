@@ -1,7 +1,12 @@
 {
   "name": "cypress-ct-octane-js",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Octane framework definition and mount adapter for Cypress component testing",
+  "keywords": [
+    "octane",
+    "cypress",
+    "testing"
+  ],
   "license": "MIT",
   "author": "Erik Fossvold",
   "repository": "git+https://github.com/efossvold/cypress-ct-octane-js",
