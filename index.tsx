@@ -1,9 +1,16 @@
 import { getContainerEl, setupHooks } from "@cypress/mount-utils";
 import { type ComponentBody, createRoot } from "octane";
 
+let isLogEnabled: boolean | undefined = false;
 let dispose: () => void;
 
 function cleanup() {
+  if (isLogEnabled !== false) {
+    Cypress.log({
+      name: "unmount",
+      message: "Unmounted component",
+    });
+  }
   dispose?.();
 }
 
@@ -12,6 +19,7 @@ interface MountingOptions {
 }
 
 export function mount(component: Parameters<ComponentBody>[0], options: MountingOptions = {}) {
+  isLogEnabled = options.log;
   const container = getContainerEl();
 
   if (!container) {
