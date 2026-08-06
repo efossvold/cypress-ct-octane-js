@@ -1,11 +1,32 @@
-A template to use as a starting point when building a Component Framework Definition.
+<div><a href="https://octanejs.dev/">Octane</a> framework definition and mount adapter for <a href="https://docs.cypress.io/app/component-testing/">component testing</a> with <a href="https://www.cypress.io/">Cypress</a></div>
 
-An completed example for [Solid.js](https://www.solidjs.com/) is [available here](https://github.com/lmiller1990/cypress-ct-solid-js).
+## Installation
 
-See [the documentation](https://docs.cypress.io/guides/component-testing/third-party-definitions#List-of-Framework-Definitions) to Learn how to author a Framework Definition for your favorite library!
+#### With bun
 
-Once you've written your definition:
+```sh
+bun i cypress-ct-octane-js
+```
 
-- `npm run build` to build it
-- update `name` in `package.json`
-- publish!
+#### With pnpm
+
+```sh
+pnpm add cypress-ct-octane-js
+```
+
+#### With NPM
+
+```sh
+npm cypress-ct-octane-js
+```
+
+## Usage example
+
+```javascript
+import { mount } from "cypress-ct-octane-js";
+
+it("example test", () => {
+  mount(<>Hello World!</>);
+  cy.contains("Hello World!").should("be.visible");
+});
+```

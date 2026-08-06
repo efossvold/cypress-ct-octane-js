@@ -1,25 +1,26 @@
-import { getContainerEl, setupHooks } from "@cypress/mount-utils";
-import { render } from "solid-js/web";
+import { getContainerEl } from "@cypress/mount-utils";
+import { type ComponentBody, createRoot } from "octane";
 
-let dispose: () => void;
+// let dispose: () => void;
 
-function cleanup() {
-  dispose?.();
-}
+// function cleanup() {
+//   dispose?.();
+// }
 
 interface MountingOptions {
   log?: boolean;
 }
 
-export function mount(
-  component: Parameters<typeof render>[0],
-  options: MountingOptions = {}
-) {
-  // rendering/mounting function.
+export function mount(component: Parameters<ComponentBody>[0], options: MountingOptions = {}) {
   const root = getContainerEl();
 
-  // Render component with your library's relevant
-  dispose = render(component, root);
+  if (!root) {
+    throw new Error("'root' element not found");
+  }
+
+  createRoot(root).render(component);
+
+  // dispose = render(component, root);
 
   return cy.wait(0, { log: false }).then(() => {
     if (options.log !== false) {
@@ -31,4 +32,4 @@ export function mount(
   });
 }
 
-setupHooks(cleanup);
+// setupHooks(cleanup);
