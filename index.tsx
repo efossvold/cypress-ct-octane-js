@@ -1,26 +1,26 @@
-import { getContainerEl } from "@cypress/mount-utils";
+import { getContainerEl, setupHooks } from "@cypress/mount-utils";
 import { type ComponentBody, createRoot } from "octane";
 
-// let dispose: () => void;
+let dispose: () => void;
 
-// function cleanup() {
-//   dispose?.();
-// }
+function cleanup() {
+  dispose?.();
+}
 
 interface MountingOptions {
   log?: boolean;
 }
 
 export function mount(component: Parameters<ComponentBody>[0], options: MountingOptions = {}) {
-  const root = getContainerEl();
+  const container = getContainerEl();
 
-  if (!root) {
+  if (!container) {
     throw new Error("'root' element not found");
   }
 
-  createRoot(root).render(component);
-
-  // dispose = render(component, root);
+  const root = createRoot(container);
+  dispose = root.unmount;
+  root.render(component);
 
   return cy.wait(0, { log: false }).then(() => {
     if (options.log !== false) {
@@ -32,4 +32,4 @@ export function mount(component: Parameters<ComponentBody>[0], options: Mounting
   });
 }
 
-// setupHooks(cleanup);
+setupHooks(cleanup);
