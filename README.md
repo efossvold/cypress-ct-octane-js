@@ -2,22 +2,15 @@
 
 ## Installation
 
-#### With bun
-
 ```sh
+# bun
 bun i cypress-ct-octane-js
-```
 
-#### With pnpm
-
-```sh
+# pnpm
 pnpm add cypress-ct-octane-js
-```
 
-#### With NPM
-
-```sh
-npm cypress-ct-octane-js
+# npm
+npm i cypress-ct-octane-js
 ```
 
 ## Configuration
@@ -39,7 +32,7 @@ export default defineConfig({
 If you use Typescript, you may get a type error when setting the framework property. To fix it, type cast the property to `any` like this:
 
 ```ts
-framework: 'cypress-ct-octane-js' as any,
+framework: "cypress-ct-octane-js" as any,
 ```
 
 ## Adding mount command
