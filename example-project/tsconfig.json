@@ -1,0 +1,13 @@
+{
+  "include": [ "./*.ts?", "cypress" ],
+  "compilerOptions": {
+    "module": "esnext",
+    "types": [ "cypress" ],
+    "lib": [ "dom", "esnext" ],
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "jsxImportSource": "octane",
+    "skipLibCheck": true,
+    "noEmit": true,
+  }
+}

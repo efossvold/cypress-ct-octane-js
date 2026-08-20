@@ -4,13 +4,13 @@
 
 ```sh
 # bun
-bun i cypress-ct-octane-js
+bun i -D cypress-ct-octane-js
 
 # pnpm
-pnpm add cypress-ct-octane-js
+pnpm add -D cypress-ct-octane-js
 
 # npm
-npm i cypress-ct-octane-js
+npm i -D cypress-ct-octane-js
 ```
 
 ## Configuration
