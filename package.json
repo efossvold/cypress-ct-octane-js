@@ -25,14 +25,14 @@
     "build:definition": "tsc --project tsconfig.definition.json && mv dist/definition.js dist/definition.cjs"
   },
   "dependencies": {
-    "@cypress/mount-utils": "^4.1.2"
+    "@cypress/mount-utils": "^5.0.0"
   },
   "devDependencies": {
-    "octane": "^0.1.41",
+    "octane": "^0.2.13",
     "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "cypress": "^15.20.1",
-    "octane": ">=0.1.41"
+    "octane": ">=0.2.3"
   }
 }

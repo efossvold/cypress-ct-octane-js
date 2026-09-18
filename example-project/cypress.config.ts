@@ -2,9 +2,6 @@ import { octane } from "octane/compiler/vite";
 import { defineConfig } from "cypress";
 
 export default defineConfig({
-  allowCypressEnv: false,
-  experimentalMemoryManagement: true,
-  experimentalFastVisibility: true,
   video: false,
 
   component: {

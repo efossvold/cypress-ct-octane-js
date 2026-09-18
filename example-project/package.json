@@ -6,13 +6,13 @@
     "test": "cypress open --component --browser chrome"
   },
   "devDependencies": {
-    "@octanejs/vite-plugin": "^0.1.41",
-    "cypress": "^15.21.0",
+    "@octanejs/vite-plugin": "^0.1.55",
+    "cypress": "^16.1.0",
     "cypress-ct-octane-js": "link:cypress-ct-octane-js",
-    "octane": "^0.1.41",
-    "vite": "^8.2.2"
+    "octane": "^0.2.13",
+    "vite": "^8.3.0"
   },
   "peerDependencies": {
-    "octane": ">=0.1.41"
+    "octane": ">=0.2.3"
   }
 }
