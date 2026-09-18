@@ -1,6 +1,6 @@
 {
   "name": "cypress-ct-octane-js",
-  "version": "0.1.37",
+  "version": "0.1.38",
   "description": "Octane framework definition and mount adapter for Cypress component testing",
   "keywords": [
     "component-testing",
